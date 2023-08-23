@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Registration Success</title>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+
+<div class="max-w-md mx-auto bg-gray-800 p-8 rounded-md shadow-md text-center">
+    <h1 class="text-2xl font-semibold mb-4">Registration Status</h1>
+
+    <script>
+        const inputValue = new URLSearchParams(window.location.search).get('inputValue');
+        
+        if (localStorage.getItem('isRegistered') === 'true' && inputValue) {
+            document.write('<p class="mb-4">Thank you for registering. You have successfully registered for entry.</p>');
+        } else {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+    <a href="index.html" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none">Go to Main Page</a>
+</div>
+
+</body>
+</html>
